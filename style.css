@@ -24,13 +24,14 @@
 
 body {
     font-family: "Comfortaa", cursive, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #left-div {
     width: 20%;
-    height: 100vh;
+    height: 90vh;
     background-color: rgb(60,60,60);
-    margin: -8px -8px;
     padding: 0;
     float: left;
     text-align: center;
@@ -63,9 +64,8 @@ body {
 
 #upgrades {
     width: 20%;
-    height: 100vh;
+    height: 90vh;
     background-color: rgb(60,60,60);
-    margin: -8px -8px;
     padding: 0;
     float: right;
     text-align: center;
@@ -176,4 +176,43 @@ body {
 #skins #circle-skin:active {
     transition: 0.1s;
     transform: scale(0.9);
+}
+
+#top {
+    background-color: rgb(55,55,55);
+    height: 10vh;
+    color: rgb(255,255,255);
+}
+
+#top #title {
+    font-size: 1.5em;
+    margin: 0px 12px;
+    position: relative;
+    top: 15px;
+}
+
+#top a {
+    transition: 0.1s;
+    color: rgb(255,255,255);
+    text-underline-offset: 1000vh;
+}
+
+#top a:hover {
+    transition: 0.1s;
+    color: rgb(175, 175, 175);
+}
+
+#top #github {
+    position: relative;
+    top: 13px;
+}
+
+#top #page {
+    position: relative;
+    top: 13px;
+    margin: 0px 12px;
+}
+
+#name::placeholder {
+    color: rgb(175,175,175)
 }
