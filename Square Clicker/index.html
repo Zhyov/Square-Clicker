@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Square Clicker</title>
+</head>
+<body>
+    <div id="left-div">
+        <h2>
+            The Square
+        </h2>
+        <p>
+            <input type="text" maxlength="9" id="name">'s Square
+            <br><br>
+            <span id="squares">0</span> Squares
+            <br>
+            <span id="squareAmount">1</span> Squares per Click
+            <br>
+            <span id="spsAmount">0</span> Squares per Second
+        </p>
+        <br>
+        <br>
+        <br>
+        <button id="square"></button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 id="skins-title">
+            Skins
+        </h2>
+        <div id="skins">
+            <button id="square-skin">
+                ✓
+            </button>
+            <button id="circle-skin">
+
+            </button>
+        </div>
+    </div>
+    <div id="upgrades">
+        <h2>
+            Upgrades
+        </h2>
+        <div id="more-clicks">
+            <span id="upgrade-name">More Clicks</span>
+            <br>
+            <span id="upgrade-description">Get +<span id="boost-moreClicks">0</span> Squares per Click</span>
+            <br>
+            <br>
+            <button id="upgrade-moreClicks" disabled="true"><span id="price-moreClicks">0</span> Squares</button>
+        </div>
+        <div id="auto-click">
+            <span id="upgrade-name">Auto Click</span>
+            <br>
+            <span id="upgrade-description">Gain +<span id="boost-autoClick">0</span> Square every Second</span>
+            <br>
+            <br>
+            <button id="upgrade-autoClick" disabled="true"><span id="price-autoClick">0</span> Squares</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
