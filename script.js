@@ -217,7 +217,7 @@ window.onload = function () {
 
 setTimeout(function () {
     document.getElementById('name').value = localStorage.getItem('Game.name');
-}, 10);
+}, 15);
 
 setTimeout(function () {
     if (Game.skin == 'Square') {
@@ -227,4 +227,4 @@ setTimeout(function () {
         sSkin.innerHTML = '';
         cSkin.innerHTML = '✓';
     };
-}, 10);
+}, 15);
