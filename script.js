@@ -11,13 +11,14 @@ Game = {
         '7': '"Cheated squares look awful!" - Luke',
         '8': 'Is "Creator" a name? Oops wrong chat...',
         '9': 'If you type "refresh()" you will get a new message!',
+        '10': 'Dont refresh the page too fast!',
     },
     squaresPerClick: 1,
     squaresPerSecond: 0,
     skin: 'Square',
 };
 
-console.log('--[ ' + Game.consoleText[String(Math.floor(Math.random() * 9) + 1)] + ' ]--');
+console.log('--[ ' + Game.consoleText[String(Math.floor(Math.random() * 10) + 1)] + ' ]--');
 
 var price_mC = 10;
 var boost_mC = 1;
@@ -30,6 +31,9 @@ var cSkin = document.getElementById('circle-skin');
 var cAlert = 0;
 var uBtn_mC = document.getElementById('upgrade-moreClicks');
 var uBtn_aC = document.getElementById('upgrade-autoClick');
+var msgContent = document.getElementById('msgContent');
+var statsBtn = document.getElementById('statsBtn');
+var creditsBtn = document.getElementById('creditsBtn');
 
 square.addEventListener('click', function () {
     Game.squares += Game.squaresPerClick;
@@ -62,7 +66,20 @@ cSkin.addEventListener('click', function () {
     Game.skin = 'Circle';
     sSkin.innerHTML = '';
     cSkin.innerHTML = '✓';
+});
 
+creditsBtn.addEventListener('click', function () {
+    msgContent.innerHTML = 'In Progress...';
+    setTimeout(function () {
+        msgContent.innerHTML = '';
+    }, 2000);
+});
+
+statsBtn.addEventListener('click', function () {
+    msgContent.innerHTML = 'In Progress...';
+    setTimeout(function () {
+        msgContent.innerHTML = '';
+    }, 2000);
 });
 
 setInterval(function () {
@@ -85,8 +102,11 @@ setInterval(function () {
         };
     } else {
         if (cAlert == 0) {
-            alert('Oh, looks like you find me! Im Luke, the Creator of the game. Just to tell you, secrets may have been unlocked so try messing with the code in the console to find an answer to the secret.');
+            msgContent.innerHTML = 'Oh, looks like you found me! Im Luke, the Creator of the game. Just to tell you, secrets may have been unlocked so try messing with the code in the console to find an answer to the secret.';
             cAlert = 1;
+            setTimeout(function () {
+                msgContent.innerHTML = '';
+            }, 12000);
         };
     };
     if (Game.squares >= price_mC) {
@@ -193,3 +213,5 @@ window.onload = function () {
         boost_aC = parseInt(localStorage.getItem('boost_aC'));
     };
 };
+
+document.getElementById('name').value = localStorage.getItem('Game.name');
