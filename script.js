@@ -150,7 +150,7 @@ setInterval(function () {
         square.style.borderRadius = '0';
     } else if (Game.skin == 'Circle') {
         square.style.borderRadius = '50%';
-    }
+    };
     Game.name = document.getElementById('name').value;
     squares.innerHTML = Game.squares;
     document.getElementById('price-moreClicks').innerHTML = price_mC;
