@@ -214,3 +214,39 @@ body {
 #name::placeholder {
     color: rgb(175,175,175)
 }
+
+#creditsBtn {
+    transition: 0.25s;
+    color: rgb(255,255,255);
+    background-color: rgb(50,50,50);
+    border-style: none;
+    padding: 12px 12px;
+    font-family: 'Arial';
+    font-weight: bolder;
+    float: left;
+}
+
+#statsBtn {
+    transition: 0.25s;
+    color: rgb(255,255,255);
+    background-color: rgb(50,50,50);
+    border-style: none;
+    padding: 12px 20px;
+    font-family: 'Arial';
+    font-weight: bolder;
+    float: right;
+}
+
+#msg {
+    background-color: rgb(60,60,60);
+    height: 5.6vh;
+    color: rgb(175,175,175);
+    margin: -21.5px 0px;
+}
+
+#msgContent {
+    transition: 0.1s;
+    text-align: center;
+    font-size: 0.8em;
+    font-family: 'Arial';
+}
