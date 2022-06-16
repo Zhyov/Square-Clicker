@@ -47,7 +47,7 @@ uBtn_mC.addEventListener('click', function () {
 uBtn_aC.addEventListener('click', function () {
     if (Game.squares >= price_aC) {
         Game.squares -= price_aC;
-        price_aC *= 3.5;
+        price_aC *= 3;
         Game.squaresPerSecond += boost_aC;
      };
 });
@@ -74,6 +74,14 @@ setInterval(function () {
         if (Game.squares < 0) {
             Game.squares = 0;
             console.log("I smell cheating... you cannot have negative numbers, can you?");
+        };
+        if (Game.squaresPerClick < 1) {
+            Game.squaresPerClick = 1;
+            console.log("You cannot have a negative number of squares per click!");
+        };
+        if (Game.squaresPerSecond < 0) {
+            Game.squaresPerSecond = 0;
+            console.log("You cannot have a negative number of squares per second!");
         };
     } else {
         if (cAlert == 0) {
@@ -120,7 +128,7 @@ setInterval(function () {
     };
     if (Game.skin == 'Square') {
         square.style.borderRadius = '0';
-    } else {
+    } else if (Game.skin == 'Circle') {
         square.style.borderRadius = '50%';
     }
     Game.name = document.getElementById('name').value;
@@ -133,7 +141,55 @@ setInterval(function () {
     document.getElementById('spsAmount').innerHTML = Game.squaresPerSecond;
 });
 
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode == 81) {
+        alert("Did you really think that this would work? I'm not sure, but it does.");
+        window.close();
+    }
+});
+
 refresh = function () {
     console.clear();
     console.log('--[ ' + Game.consoleText[String(Math.floor(Math.random() * 9) + 1)] + ' ]--');
+};
+
+window.onbeforeunload = function () {
+    localStorage.setItem('Game.squares', Game.squares);
+    localStorage.setItem('Game.squaresPerClick', Game.squaresPerClick);
+    localStorage.setItem('Game.squaresPerSecond', Game.squaresPerSecond);
+    localStorage.setItem('Game.skin', Game.skin);
+    localStorage.setItem('Game.name', Game.name);
+    localStorage.setItem('price_mC', price_mC);
+    localStorage.setItem('boost_mC', boost_mC);
+    localStorage.setItem('price_aC', price_aC);
+    localStorage.setItem('boost_aC', boost_aC);
+};
+window.onload = function () {
+    if (localStorage.getItem('Game.squares') != null) {
+        Game.squares = parseInt(localStorage.getItem('Game.squares'));
+    };
+    if (localStorage.getItem('Game.squaresPerClick') != null) {
+        Game.squaresPerClick = parseInt(localStorage.getItem('Game.squaresPerClick'));
+    };
+    if (localStorage.getItem('Game.squaresPerSecond') != null) {
+        Game.squaresPerSecond = parseInt(localStorage.getItem('Game.squaresPerSecond'));
+    };
+    if (localStorage.getItem('Game.skin') != null) {
+        Game.skin = localStorage.getItem('Game.skin');
+    };
+    if (localStorage.getItem('Game.name') != null) {
+        Game.name = localStorage.getItem('Game.name');
+    };
+    if (localStorage.getItem('price_mC') != null) {
+        price_mC = parseInt(localStorage.getItem('price_mC'));
+    };
+    if (localStorage.getItem('boost_mC') != null) {
+        boost_mC = parseInt(localStorage.getItem('boost_mC'));
+    };
+    if (localStorage.getItem('price_aC') != null) {
+        price_aC = parseInt(localStorage.getItem('price_aC'));
+    };
+    if (localStorage.getItem('boost_aC') != null) {
+        boost_aC = parseInt(localStorage.getItem('boost_aC'));
+    };
 };
