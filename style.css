@@ -23,7 +23,8 @@
 }
 
 body {
-    font-family: "Comfortaa", cursive, sans-serif;
+    font-family: "Nunito", cursive, sans-serif;
+    background-color: rgb(70,70,70);
     margin: 0;
     padding: 0;
 }
@@ -36,7 +37,6 @@ body {
     float: left;
     text-align: center;
     font-size: 1em;
-    font-family: "Comfortaa", cursive, sans-serif;
     color: white;
 }
 
@@ -52,7 +52,6 @@ body {
     background-color: rgb(80,80,80);
     color: white;
     font-size: 1em;
-    font-family: "Comfortaa", cursive, sans-serif;
     resize: none;
     outline: none;
     text-align: center;
@@ -70,7 +69,6 @@ body {
     float: right;
     text-align: center;
     font-size: 1em;
-    font-family: "Comfortaa", cursive, sans-serif;
     color: white;
 }
 
