@@ -32,8 +32,9 @@ var cAlert = 0;
 var uBtn_mC = document.getElementById('upgrade-moreClicks');
 var uBtn_aC = document.getElementById('upgrade-autoClick');
 var msgContent = document.getElementById('msgContent');
-var statsBtn = document.getElementById('statsBtn');
+var wipeBtn = document.getElementById('wipeBtn');
 var creditsBtn = document.getElementById('creditsBtn');
+var main = document.getElementById('main');
 
 square.addEventListener('click', function () {
     Game.squares += Game.squaresPerClick;
@@ -69,14 +70,29 @@ cSkin.addEventListener('click', function () {
 });
 
 creditsBtn.addEventListener('click', function () {
-    msgContent.innerHTML = 'In Progress...';
-    setTimeout(function () {
-        msgContent.innerHTML = '';
-    }, 2000);
+    main.innerHTML = '<br><br><br><br><br><br><br><h1>Credits</h1><br><br><h4>Game: Luke<br>Ideas: Luke and Some Friends<br>Inspiration: Cookie Clicker</h4>';
 });
 
-statsBtn.addEventListener('click', function () {
-    msgContent.innerHTML = 'In Progress...';
+wipeBtn.addEventListener('click', function () {
+    Game.squares = 0;
+    Game.squaresPerClick = 1;
+    Game.squaresPerSecond = 0;
+    Game.skin = 'Square';
+    Game.name = '';
+    price_mC = 10;
+    boost_mC = 1;
+    price_aC = 20;
+    boost_aC = 1;
+    cAlert = 0;
+    document.getElementById('name').value = Game.name;
+    if (Game.skin == 'Square') {
+        cSkin.innerHTML = '';
+        sSkin.innerHTML = '✓';
+    } else if (Game.skin == 'Circle') {
+        sSkin.innerHTML = '';
+        cSkin.innerHTML = '✓';
+    };
+    msgContent.innerHTML = 'Data Wiped!';
     setTimeout(function () {
         msgContent.innerHTML = '';
     }, 2000);
@@ -217,7 +233,7 @@ window.onload = function () {
 
 setTimeout(function () {
     document.getElementById('name').value = localStorage.getItem('Game.name');
-}, 15);
+}, 50);
 
 setTimeout(function () {
     if (Game.skin == 'Square') {
@@ -227,4 +243,4 @@ setTimeout(function () {
         sSkin.innerHTML = '';
         cSkin.innerHTML = '✓';
     };
-}, 15);
+}, 50);
